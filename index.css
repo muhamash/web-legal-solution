@@ -1,0 +1,60 @@
+.my-class{
+    display: grid;
+    grid-template-columns: repeat(3, fr);
+}
+
+/* accordion styles */
+.mod-accordion {
+    box-sizing: border-box;
+    background: rgb(218, 223, 224);
+}
+.accordion-ul {
+    margin: auto;
+    width: 580px;
+}
+
+.accordion-ul li {
+    list-style: none;
+    width: 100%;
+    margin: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    background: #b7ba61;
+    box-shadow: 2px 2px 4px -1px rgb(248, 248, 247),
+                -2px -3px 4px -1px rgb(96, 96, 89);
+}
+.accordion-ul label {
+    display: flex;
+    align-items: center;
+    padding:0px;
+    font-size: 18px;
+    font-weight: 400;
+    cursor: pointer;
+}
+label::before {
+    content: '+';
+    margin-right: 10px;
+    font-size: 22px;
+    font-weight: 500;
+}
+input[type="radio"]{
+    display: none;
+}
+
+.accordion-ul .accordion-ul-content{
+    color: rgb(19, 64, 67);
+    padding-top: 10px;
+    line-height: 24px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s, padding 0.5s;
+}
+
+input[type="radio"]:checked + label + .accordion-ul-content {
+    max-height: 400px;
+    padding: 10px 10px 20px;
+}
+
+input[type="radio"]:checked + label::before {
+    content: '-';
+}
